@@ -1,0 +1,397 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Commissioner', sans-serif;
+	background-color: rgb(242, 242, 242);
+	color: rgb(122, 122, 122);
+	font-weight: 400;
+	position: relative;
+}
+
+p {
+	line-height: 2;
+}
+
+button {
+	cursor: pointer;
+}
+
+header {
+	background-color: #303030;
+	background-image: url('../images/image-hero-desktop.jpg');
+	background-position: center;
+	background-size: cover;
+	height: 400px;
+}
+nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 3rem 7rem;
+	position: relative;
+}
+nav .logo {
+	height: 20px;
+	width: fit-content;
+}
+nav .logo img {
+	width: 100%;
+}
+nav .nav-links {
+	display: flex;
+	list-style: none;
+}
+nav .nav-links li {
+	padding: 0 1rem;
+}
+nav .nav-links li a {
+	color: #efefef;
+	text-decoration: none;
+	font-size: 1rem;
+}
+nav .nav-links li a:hover {
+	color: #fff;
+}
+
+nav .hamburger {
+	display: none;
+}
+
+nav .close {
+	display: none;
+}
+
+nav .mobile-menu {
+	display: none;
+	transform: scale(0);
+}
+
+section {
+	border: 1px solid hsl(0, 0%, 90%);
+	background-color: white;
+	border-radius: 10px;
+	max-width: 700px;
+	margin: 2rem auto;
+	padding: 3rem 2rem;
+}
+
+/* Project info section */
+.project-info {
+	margin: -50px auto;
+	margin-bottom: 0;
+	text-align: center;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+.project-info-buttons {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 1.5rem;
+}
+.project-info-buttons .bookmark {
+	display: flex;
+	align-items: center;
+	background-color: rgb(242, 242, 242);
+	border-radius: 50px;
+	width: 180px;
+}
+.project-info-buttons .bookmark p {
+	padding: 0 20px;
+	color: #808080;
+	font-weight: 500;
+	line-height: 2;
+	font-size: 1rem;
+}
+.project-info-buttons .bookmark .bookmark-icon {
+	background-color: transparent;
+	cursor: pointer;
+}
+.project-info button {
+	font-family: 'Commissioner', sans-serif;
+	height: fit-content;
+	width: 180px;
+	border-radius: 30px;
+	border: none;
+	padding: 1.25rem 1rem;
+	font-weight: 500;
+	background-color: rgb(60, 180, 172);
+	color: #fff;
+	font-size: 1rem;
+	transition: background-color 300ms ease-in-out;
+}
+.project-info button:hover {
+	background-color: rgb(20, 123, 116);
+}
+.project-info > img {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	margin-top: -76px;
+}
+.project-info h1 {
+	font-size: 1.5rem;
+	line-height: 1.5;
+	color: #000;
+	margin-bottom: 1rem;
+}
+.project-info p {
+	color: #7a7a7a;
+}
+
+/* Project details section */
+.project-details {
+	max-width: 700px;
+	display: flex;
+	flex-direction: column;
+}
+.project-details .stats {
+	display: flex;
+	margin-bottom: 2rem;
+}
+.project-details h1 {
+	font-weight: 700;
+	font-size: 36px;
+	color: #000;
+}
+.project-details p {
+	font-size: 1rem;
+}
+.project-details .stats > .total {
+	border-left: 1px solid rgb(230, 230, 230);
+	border-right: 1px solid rgb(230, 230, 230);
+	padding: 0px 2.5rem;
+	margin: 0px 2.5rem;
+}
+.project-details .progress-bar {
+	width: 100%;
+	background: rgb(60, 180, 172);
+	height: 1rem;
+	border-radius: 0.5rem;
+	margin-top: 1rem;
+}
+
+/* About project section */
+.about-project h2 {
+	font-size: 1.25rem;
+	margin-bottom: 1.5rem;
+	color: #000;
+}
+.about-project p {
+	font-size: 1rem;
+	margin-bottom: 1.5rem;
+}
+.about-project .card {
+	padding: 2rem 1.5rem;
+	border: 1px solid rgb(230, 230, 230);
+	border-radius: 0.5rem;
+	margin-top: 2rem;
+}
+.about-project .card-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.25rem;
+}
+.about-project .card-top h3 {
+	font-size: 1rem;
+	transition: color 0.25s ease;
+	color: #000;
+	font-weight: 700;
+}
+.about-project .card-top h4 {
+	font-size: 1rem;
+	font-weight: 500;
+	color: hsl(176, 50%, 47%);
+}
+.about-project .card-bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.about-project .card-bottom .stocks {
+	display: flex;
+	align-items: center;
+}
+.about-project .card-bottom h1 {
+	color: #000;
+	font-size: 2.25rem;
+	margin-right: 0.75rem;
+}
+.about-project .card-bottom span {
+	font-size: 1rem;
+	color: #7a7a7a;
+}
+.about-project .card-bottom button {
+	font-family: 'Commissioner', sans-serif;
+	height: fit-content;
+	width: 167px;
+	border-radius: 30px;
+	border: none;
+	padding: 1.25rem 1rem;
+	font-weight: 500;
+	background-color: rgb(60, 180, 172);
+	color: #fff;
+	font-size: 1rem;
+	transition: background-color 300ms ease-in-out;
+}
+.about-project .card-bottom button:hover {
+	background-color: rgb(20, 123, 116);
+}
+.about-project > div:nth-child(6) > div.card-bottom > button {
+	background-color: hsl(0, 0%, 48%);
+	cursor: not-allowed;
+}
+.about-project > div:nth-child(6) {
+	opacity: 0.6;
+}
+
+@media only screen and (max-width: 720px) {
+	.body-overlay {
+		display: block;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		pointer-events: none;
+		background-color: rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		transition: opacity 0.5s ease;
+		z-index: 1;
+	}
+
+	nav .nav-links {
+		display: none;
+	}
+	header {
+		background-image: url('../images/image-hero-mobile.jpg');
+		background-position: center;
+		background-size: cover;
+		height: 400px;
+	}
+	nav {
+		padding: 3rem 1.5rem;
+		z-index: 3;
+	}
+	nav .hamburger {
+		display: block;
+		cursor: pointer;
+		transition: display 300ms ease;
+	}
+	nav .close {
+		cursor: pointer;
+		transition: display 300ms ease;
+	}
+	nav .mobile-menu {
+		display: block;
+		transform: scale(0);
+		background: #fff;
+		padding: 0;
+		border-radius: 10px;
+		position: absolute;
+		top: 5rem;
+		right: 1.5rem;
+		left: 1.5rem;
+		transition: transform 200ms ease-in-out;
+		overflow: hidden;
+		transform-origin: top;
+	}
+	nav .mobile-menu ul {
+		list-style: none;
+	}
+	nav .mobile-menu ul li {
+		padding: 1.5rem 2rem;
+		border-bottom: 1px solid rgb(242, 242, 242);
+	}
+	nav .mobile-menu ul li a {
+		text-decoration: none;
+		font-size: 1.5rem;
+		color: #000;
+		font-weight: 500;
+	}
+
+	section {
+		max-width: 100%;
+		margin: 2rem 1.5rem;
+	}
+	.project-info {
+		max-width: 100%;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		margin-top: -100px;
+		margin-left: 1.5rem;
+		margin-right: 1.5rem;
+	}
+	.project-info-buttons .bookmark p {
+		display: none;
+	}
+	.project-info-buttons .bookmark {
+		width: fit-content;
+	}
+
+	.project-details {
+		max-width: 100%;
+		flex-direction: column;
+	}
+	.project-details .stats {
+		flex-direction: column;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	.project-details h1 {
+		font-weight: 700;
+		font-size: 36px;
+		color: #000;
+	}
+	.project-details p {
+		font-size: 1rem;
+	}
+	.project-details .stats {
+		padding: 0;
+		margin: 0;
+	}
+	.project-details .stats > .total {
+		border: 0;
+		border-top: 1px solid rgb(230, 230, 230);
+		border-bottom: 1px solid rgb(230, 230, 230);
+		padding: 1rem 0;
+		width: fit-content;
+		margin: 1rem auto;
+	}
+
+	.about-project .card {
+		padding: 2rem 1.5rem;
+	}
+	.about-project .card-top {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1.25rem;
+	}
+	.about-project .card-top h3 {
+		margin-bottom: 0.725rem;
+	}
+	.about-project .card-bottom {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.about-project .card-bottom .stocks {
+		display: flex;
+		align-items: center;
+	}
+	.about-project .card-bottom h1 {
+		margin-bottom: 1rem;
+		margin-right: 0.725rem;
+	}
+}
