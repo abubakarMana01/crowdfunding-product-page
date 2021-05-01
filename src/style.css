@@ -279,7 +279,7 @@ section {
 	overflow-y: scroll;
 	top: 15vh;
 	transform: scale(0);
-	transition: transform 300ms ease, opacity 500ms ease-out;
+	transition: transform 600ms ease, opacity 1000ms ease-out;
 	opacity: 0;
 	z-index: 2;
 	max-width: 65%;
@@ -398,6 +398,46 @@ body > section > div:nth-child(6) {
 body > section > div:nth-child(6) > div.pledge > form > button {
 	background-color: hsl(0, 0%, 48%);
 	cursor: not-allowed;
+}
+
+.support {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	position: fixed;
+	top: 15vh;
+	transform: scale(0);
+	transition: transform 500ms ease 500ms, opacity 700ms ease-out 500ms;
+	opacity: 0;
+	z-index: 2;
+	max-width: 700px;
+	left: 20%;
+	right: 20%;
+}
+.support h2 {
+	font-size: 20px;
+	color: #000;
+	margin: 1rem 0;
+}
+.support p {
+	max-width: 450px;
+}
+.support button {
+	font-family: 'Commissioner', sans-serif;
+	height: 40px;
+	width: 180px;
+	border-radius: 30px;
+	border: none;
+	margin: 1.25rem 0;
+	font-weight: 500;
+	background-color: rgb(60, 180, 172);
+	color: #fff;
+	font-size: 1rem;
+	transition: background-color 300ms ease-in-out;
+}
+.support button:hover {
+	background-color: rgb(20, 123, 116);
 }
 
 @media only screen and (max-width: 720px) {
@@ -577,5 +617,12 @@ body > section > div:nth-child(6) > div.pledge > form > button {
 		height: 80vh;
 		max-width: 100%;
 		margin: 2rem 1.5rem;
+	}
+	.support {
+		top: 15vh;
+		margin: 2rem 1.5rem;
+		max-width: 100%;
+		left: 0;
+		right: 0;
 	}
 }

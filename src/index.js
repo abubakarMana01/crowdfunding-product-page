@@ -15,6 +15,9 @@ const rewardButtons = document.querySelectorAll('.about-project button');
 const aboutProject = document.querySelector('.about-project');
 const radios = document.querySelectorAll('input[name="pledge"]');
 const pledges = document.querySelectorAll('.pledge');
+const support = document.querySelector('.support');
+const submitPledgeButtons = document.querySelectorAll('.pledge button');
+const gotItButton = document.querySelector('.support button');
 
 const showMobileMenu = () => {
 	if (mobileMenu.style.transform === 'scale(1)') {
@@ -30,39 +33,46 @@ const showMobileMenu = () => {
 	}
 };
 
+const showBackProjectOverlay = () => {
+	nav.style.zIndex = '0';
+	backProject.style.transform = 'scale(1)';
+	backProject.style.opacity = '1';
+	bodyOverlay.style.opacity = '1';
+};
+
+const hideBackProjectOverlay = () => {
+	nav.style.zIndex = '2';
+	backProject.style.transform = 'scale(0)';
+	backProject.style.opacity = '0';
+	bodyOverlay.style.opacity = '0';
+};
+
+const hideSupportOverlay = () => {
+	support.style.opacity = 0;
+	support.style.transform = 'scale(0)';
+};
+
 hamburger.addEventListener('click', showMobileMenu);
 close.addEventListener('click', showMobileMenu);
 
 aboutProject.addEventListener('click', e => {
 	if (e.target.nodeName == 'BUTTON') {
-		if (backProject.style.opacity == 0) {
-			nav.style.zIndex = '0';
-			backProject.style.transform = 'scale(1)';
-			backProject.style.opacity = '1';
-			bodyOverlay.style.opacity = '1';
-		}
+		if (backProject.style.opacity == 0) showBackProjectOverlay();
 	}
 });
 
 backThisProjectButton.addEventListener('click', e => {
-	if (backProject.style.opacity == 0) {
-		nav.style.zIndex = '0';
-		backProject.style.transform = 'scale(1)';
-		backProject.style.opacity = '1';
-		bodyOverlay.style.opacity = '1';
-	}
+	if (backProject.style.opacity == 0) showBackProjectOverlay();
 });
+
 main.addEventListener('click', e => {
 	if (
 		e.target !== backThisProjectButton &&
 		e.target !== rewardButtons &&
 		e.target.nodeName !== 'BUTTON'
-	) {
-		nav.style.zIndex = '2';
-		backProject.style.transform = 'scale(0)';
-		backProject.style.opacity = '0';
-		bodyOverlay.style.opacity = '0';
-	}
+	)
+		hideBackProjectOverlay();
+	hideSupportOverlay();
 });
 
 radios.forEach(radio => {
@@ -100,3 +110,14 @@ radios.forEach(radio => {
 		}
 	});
 });
+
+submitPledgeButtons.forEach(button => {
+	button.addEventListener('click', e => {
+		e.preventDefault();
+		hideBackProjectOverlay();
+		support.style.opacity = 1;
+		support.style.transform = 'scale(1)';
+	});
+});
+
+gotItButton.addEventListener('click', hideSupportOverlay);
