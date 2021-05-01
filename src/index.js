@@ -4,13 +4,15 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const bodyOverlay = document.querySelector('.body-overlay');
 const buttons = document.querySelectorAll('main button');
 const backProject = document.querySelector('.back-project');
-const nav = document.querySelector('nav');
-const mainDivs = document.querySelectorAll('main > *');
 const main = document.querySelector('main');
 const body = document.querySelector('body');
 const header = document.querySelector('header');
+const nav = document.querySelector('nav');
 const projectInfo = document.querySelector('.project-info');
 const projectDetails = document.querySelector('.project-details');
+const backThisProjectButton = document.querySelector('.project-info-buttons button');
+const rewardButtons = document.querySelectorAll('.about-project button');
+const aboutProject = document.querySelector('.about-project');
 
 const showMobileMenu = () => {
 	if (mobileMenu.style.transform === 'scale(1)') {
@@ -28,32 +30,35 @@ const showMobileMenu = () => {
 
 hamburger.addEventListener('click', showMobileMenu);
 close.addEventListener('click', showMobileMenu);
-document.addEventListener('click', e => {
-	buttons.forEach(button => {
-		if (e.target === button) {
-			if (backProject.style.opacity == 0) {
-				nav.style.zIndex = '0';
-				backProject.style.transform = 'scale(1)';
-				backProject.style.opacity = '1';
-				bodyOverlay.style.opacity = '1';
-			}
+
+aboutProject.addEventListener('click', e => {
+	if (e.target.nodeName == 'BUTTON') {
+		if (backProject.style.opacity == 0) {
+			nav.style.zIndex = '0';
+			backProject.style.transform = 'scale(1)';
+			backProject.style.opacity = '1';
+			bodyOverlay.style.opacity = '1';
 		}
-	});
+	}
 });
 
-document.addEventListener('click', e => {
-	main.childNodes.forEach(child => {
-		if (
-			e.target === child ||
-			e.target === main ||
-			e.target === header ||
-			e.target === nav ||
-			e.target === projectDetails
-		) {
-			nav.style.zIndex = '2';
-			backProject.style.transform = 'scale(0)';
-			backProject.style.opacity = '0';
-			bodyOverlay.style.opacity = '0';
-		}
-	});
+backThisProjectButton.addEventListener('click', e => {
+	if (backProject.style.opacity == 0) {
+		nav.style.zIndex = '0';
+		backProject.style.transform = 'scale(1)';
+		backProject.style.opacity = '1';
+		bodyOverlay.style.opacity = '1';
+	}
+});
+main.addEventListener('click', e => {
+	if (
+		e.target !== backThisProjectButton &&
+		e.target !== rewardButtons &&
+		e.target.nodeName !== 'BUTTON'
+	) {
+		nav.style.zIndex = '2';
+		backProject.style.transform = 'scale(0)';
+		backProject.style.opacity = '0';
+		bodyOverlay.style.opacity = '0';
+	}
 });
