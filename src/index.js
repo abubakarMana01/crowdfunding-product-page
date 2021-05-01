@@ -13,6 +13,8 @@ const projectDetails = document.querySelector('.project-details');
 const backThisProjectButton = document.querySelector('.project-info-buttons button');
 const rewardButtons = document.querySelectorAll('.about-project button');
 const aboutProject = document.querySelector('.about-project');
+const radios = document.querySelectorAll('input[name="pledge"]');
+const pledges = document.querySelectorAll('.pledge');
 
 const showMobileMenu = () => {
 	if (mobileMenu.style.transform === 'scale(1)') {
@@ -61,4 +63,40 @@ main.addEventListener('click', e => {
 		backProject.style.opacity = '0';
 		bodyOverlay.style.opacity = '0';
 	}
+});
+
+radios.forEach(radio => {
+	radio.addEventListener('change', e => {
+		e.target.parentElement.parentElement.parentElement.parentElement.childNodes.forEach(
+			child => {
+				if (child.className == 'card' || child.className == 'card active') {
+					if (child.className == 'card active') {
+						child.childNodes.forEach(gChild => {
+							if (gChild.className == 'pledge') {
+								gChild.style.display = 'none';
+							}
+						});
+					}
+				}
+			}
+		);
+		if (e.target.id === radio.id) {
+			if (radio.checked) {
+				e.target.parentElement.parentElement.parentElement.parentElement.childNodes.forEach(
+					node => {
+						if (node.className) {
+							node.classList.remove('active');
+						}
+					}
+				);
+			}
+			e.target.parentElement.parentElement.parentElement.classList.add('active');
+
+			e.target.parentElement.parentElement.parentElement.childNodes.forEach(node => {
+				if (node.className == 'pledge') {
+					node.style.display = 'block';
+				}
+			});
+		}
+	});
 });

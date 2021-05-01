@@ -268,11 +268,15 @@ section {
 	opacity: 0.6;
 }
 
+.active {
+	border: 2px solid hsl(176, 50%, 47%) !important;
+}
+
 /* Back project overlay */
 .back-project {
 	position: fixed;
 	height: 70vh;
-	overflow: scroll;
+	overflow-y: scroll;
 	top: 15vh;
 	transform: scale(0);
 	transition: transform 300ms ease, opacity 500ms ease-out;
@@ -330,12 +334,11 @@ section {
 	border: 1px solid hsl(0, 0%, 90%);
 	height: 56px;
 	font-size: 1rem;
-	margin-bottom: 1.5rem;
 }
 .back-project .pledge span {
 	display: inline-block;
 	position: absolute;
-	top: 20px;
+	top: 50px;
 	margin-left: 20px;
 	z-index: 1;
 }
@@ -383,6 +386,18 @@ section {
 }
 .back-project hr {
 	display: none;
+	margin-top: 1rem;
+}
+body > section > div:nth-child(6),
+body > section > div:nth-child(6) * {
+	cursor: not-allowed;
+}
+body > section > div:nth-child(6) {
+	opacity: 0.4;
+}
+body > section > div:nth-child(6) > div.pledge > form > button {
+	background-color: hsl(0, 0%, 48%);
+	cursor: not-allowed;
 }
 
 @media only screen and (max-width: 720px) {
@@ -525,7 +540,7 @@ section {
 	.back-project .pledge span {
 		display: inline-block;
 		position: absolute;
-		top: 75px;
+		top: 50px;
 		margin-left: 20px;
 		z-index: 1;
 	}
