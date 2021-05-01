@@ -279,7 +279,7 @@ section {
 	overflow-y: scroll;
 	top: 15vh;
 	transform: scale(0);
-	transition: transform 600ms ease, opacity 1000ms ease-out;
+	transition: transform 400ms ease, opacity 600ms ease-out;
 	opacity: 0;
 	z-index: 2;
 	max-width: 65%;
@@ -408,7 +408,7 @@ body > section > div:nth-child(6) > div.pledge > form > button {
 	position: fixed;
 	top: 15vh;
 	transform: scale(0);
-	transition: transform 500ms ease 500ms, opacity 700ms ease-out 500ms;
+	transition: transform 400ms ease 200ms, opacity 500ms ease-out 200ms;
 	opacity: 0;
 	z-index: 2;
 	max-width: 700px;
